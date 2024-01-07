@@ -1,12 +1,13 @@
+import { Outlet } from 'react-router-dom';
+import styles from './RootLayout.module.css';
 import Header from './Header';
-import {Outlet} from 'react-router-dom';
 import Footer from './footer/Footer';
 
 function RootLayout() {
   return (
-    <div className="font-pretendard min-w-[320px] max-w-[1023px] m-auto min-h-screen flex flex-col">
+    <div className={styles.rootLayout}>
       <Header />
-      <main className="flex-1">
+      <main>
         <Outlet />
       </main>
       <Footer />

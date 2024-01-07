@@ -1,27 +1,28 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import styles from '@/layout/RootLayout.module.css'
 import CollectionIcon from './icons/CollectionIcon';
 import SettingIcon from './icons/SettingIcon';
 import ListIcon from './icons/ListIcon';
 
 function Footer() {
   return (
-    <footer className="bg-primary/80">
-      <ul className="font-label text-contentSecondary flex justify-around">
+    <footer className={styles.footer}>
+      <ul>
         <NavLink to="/collection">
-          <li className="flex gap-3 p-5">
+          <li>
             <CollectionIcon />
             <span>모으기</span>
           </li>
         </NavLink>
         <NavLink to="/list">
-          <li className="flex gap-3 p-5">
+          <li>
             <ListIcon />
             <span>꺼내보기</span>
           </li>
         </NavLink>
         <NavLink to="/setting">
-          <li className="flex gap-3 p-5">
+          <li>
             <SettingIcon />
             <span>설정</span>
           </li>
