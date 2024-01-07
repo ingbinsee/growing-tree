@@ -1,0 +1,3 @@
+.button {
+  @apply p-3 rounded-xl font-label text-large text-contentSecondary;
+}
