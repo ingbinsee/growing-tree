@@ -1,18 +1,24 @@
 .rootLayout {
-  @apply font-pretendard min-w-[320px] max-w-[1023px] m-auto min-h-screen flex flex-col;
+  @apply font-pretendard;
+  @apply min-w-[320px] max-w-[1023px] m-auto min-h-screen;
+  @apply flex flex-col;
 
   .header {
-    @apply bg-primary py-4 flex justify-center;
+    @apply bg-primary;
+    @apply py-4;
+    @apply flex justify-center;
   }
 
   .footer {
     @apply bg-primary;
 
     & ul {
-      @apply font-label text-contentSecondary flex justify-around;
+      @apply font-label text-contentSecondary;
+      @apply flex justify-around;
 
       & li {
-        @apply flex gap-3 p-5;
+        @apply flex flex-col items-center gap-2;
+        @apply p-5;
 
         .icon {
           @apply fill-contentSecondary;
@@ -21,6 +27,6 @@
     }
   }
   & main {
-    @apply flex-1;
+    @apply flex-1 px-6;
   }
 }

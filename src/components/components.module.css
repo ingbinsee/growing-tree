@@ -1,3 +1,47 @@
 .button {
-  @apply p-3 rounded-xl font-label text-large text-contentSecondary;
+  @apply font-label text-large text-contentSecondary;
+  @apply p-3 rounded-xl;
+}
+
+.sectionTitle {
+  @apply text-contentPrimary font-heading text-xl;
+  @apply block;
+}
+
+.dateList {
+  @apply text-large bg-primary/20;
+  @apply px-3 py-2 rounded-[4px];
+  @apply flex;
+
+  .title {
+    @apply text-contentPrimary font-label;
+    @apply flex-1;
+  }
+
+  .date {
+    @apply text-contentTertiary font-paragraph;
+  }
+}
+
+.labelInput {
+  @apply flex flex-col gap-3;
+  @apply text-medium;
+
+  & label {
+    @apply font-label text-contentPrimary;
+  }
+
+  & input {
+    @apply flex-1 p-3;
+    @apply border border-borderDefault rounded-[4px];
+    @apply font-paragraph text-contentTertiary;
+  }
+
+  .rowLabel {
+    @apply w-32;
+  }
+}
+
+.row {
+  @apply flex-row items-center;
 }
