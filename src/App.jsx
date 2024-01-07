@@ -1,5 +1,9 @@
+import {RouterProvider} from 'react-router-dom';
+import router from './routes';
+import Header from './layout/Header';
+
 function App() {
-  return <div className="bg-yellow-100">null</div>;
+  return <RouterProvider router={router}></RouterProvider>;
 }
 
 export default App;
