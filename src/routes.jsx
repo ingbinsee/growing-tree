@@ -11,7 +11,6 @@ import Setting from './pages/Setting';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
