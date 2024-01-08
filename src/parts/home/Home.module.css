@@ -1,0 +1,28 @@
+.home {
+  @apply flex flex-col gap-12 items-center;
+
+  & span {
+    @apply text-[#4C6E3F] font-heading text-2xl;
+  }
+
+  & figure {
+    @apply bg-primary/20 rounded-full max-w-96 max-h-96;
+  }
+
+  .buttonSection {
+    @apply flex gap-6 w-full;
+
+    & h2 {
+      @apply sr-only;
+    }
+
+    .link {
+      @apply flex-1;
+    }
+
+    & button {
+      @apply bg-secondary/80 hover:bg-secondary;
+      @apply w-full;
+    }
+  }
+}

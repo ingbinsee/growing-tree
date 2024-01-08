@@ -4,7 +4,7 @@ import styles from './RootLayout.module.css';
 function Header() {
   return (
     <header className={styles.header}>
-      <Link to="/"><img src="logo.png" alt="로고" /></Link>
+      <Link to="/"><h1><img src="logo.png" alt="그로잉" /></h1></Link>
     </header>
   );
 }

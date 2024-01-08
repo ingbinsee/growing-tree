@@ -1,12 +1,16 @@
 .rootLayout {
   @apply font-pretendard;
-  @apply min-w-[320px] max-w-[1023px] m-auto min-h-screen;
+  @apply min-w-[320px] max-w-[767px] m-auto min-h-screen;
   @apply flex flex-col;
 
   .header {
     @apply bg-primary;
-    @apply py-4;
+    @apply py-2;
     @apply flex justify-center;
+
+    & h1 {
+      @apply w-12 h-12;
+    }
   }
 
   .footer {
@@ -18,7 +22,7 @@
 
       & li {
         @apply flex flex-col items-center gap-2;
-        @apply p-5;
+        @apply py-3;
 
         .icon {
           @apply fill-contentSecondary;
@@ -27,6 +31,6 @@
     }
   }
   & main {
-    @apply flex-1 px-6;
+    @apply flex-1 px-6 py-16;
   }
 }

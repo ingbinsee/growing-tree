@@ -1,8 +1,8 @@
 import styles from "./components.module.css";
 
-function Button({type, text, color}) {
+function Button({type, text, className}) {
   return (
-    <button type={type} className={`${styles.button} ${color}`}>
+    <button type={type} className={`${styles.button} ${className}`}>
       {text}
     </button>
   );
