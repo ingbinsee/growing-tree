@@ -1,6 +1,6 @@
 .button {
   @apply font-label text-large text-contentSecondary;
-  @apply p-3 rounded-xl;
+  @apply py-2 rounded-xl;
 }
 
 .sectionTitle {

@@ -16,13 +16,9 @@
       @apply sr-only;
     }
 
-    .link {
-      @apply flex-1;
-    }
-
-    & button {
+    .button {
       @apply bg-secondary/80 hover:bg-secondary;
-      @apply w-full;
+      @apply flex-1;
     }
   }
 }

@@ -13,8 +13,10 @@ function ButtonSection({id, password, isChecked}) {
         toast.error('개인정보 수집 및 이용에 동의해 주세요.');
       } else {
         const user = await createUserWithEmailAndPassword(auth, id, password);
-        console.log(user);
         toast.success('가입되었습니다.');
+        setTimeout(() => {
+          navigate('/');
+        }, 1000);
       }
     } catch (error) {
       if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
