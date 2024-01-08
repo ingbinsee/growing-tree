@@ -12,19 +12,19 @@ function Footer() {
         <NavLink to="/collection">
           <li>
             <CollectionIcon />
-            <span>모으기</span>
+            <h2>모으기</h2>
           </li>
         </NavLink>
         <NavLink to="/list">
           <li>
             <ListIcon />
-            <span>꺼내보기</span>
+            <h2>꺼내보기</h2>
           </li>
         </NavLink>
         <NavLink to="/setting">
           <li>
             <SettingIcon />
-            <span>설정</span>
+            <h2>설정</h2>
           </li>
         </NavLink>
       </ul>
