@@ -1,0 +1,11 @@
+.signIn {
+  @apply flex flex-col gap-12;
+
+  .infoSection {
+    @apply flex flex-col gap-6;
+  }
+
+  .button {
+    @apply bg-secondary/80 hover:bg-secondary w-full;
+  }
+}
