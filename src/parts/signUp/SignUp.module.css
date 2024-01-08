@@ -1,0 +1,58 @@
+.signUp {
+  @apply flex flex-col gap-12;
+
+  .information {
+    @apply flex flex-col gap-8;
+
+    & div {
+      @apply relative;
+
+      & span {
+        @apply text-red-500 font-paragraph text-small pt-1 absolute;
+      }
+    }
+  }
+
+  .agreementSection {
+    @apply flex flex-col gap-3;
+
+    & h3 {
+      @apply font-label text-large;
+    }
+
+    & ol {
+      @apply flex flex-col gap-1;
+      @apply border border-borderDefault rounded-[20px];
+      @apply text-small;
+      @apply p-4;
+
+      & li {
+        @apply flex flex-col;
+
+        .listTitle {
+          @apply font-label;
+        }
+      }
+    }
+
+    & fieldset {
+      @apply flex gap-2 items-center justify-end;
+
+      & label {
+        @apply font-paragraph text-small;
+      }
+    }
+  }
+
+  .buttonSrcion {
+    @apply flex gap-6;
+
+    .positiveButton {
+      @apply bg-positive/80 hover:bg-positive flex-1;
+    }
+
+    .negativeButton {
+      @apply bg-negative/80 hover:bg-negative flex-1;
+    }
+  }
+}
