@@ -1,17 +1,18 @@
 import Button from '@/components/Button';
 import SectionTitle from '@/components/SectionTitle';
-import { auth } from '@/firebase';
+import {auth} from '@/firebase';
 import InfoSection from '@/parts/signIn/InfoSection';
 import styles from '@/parts/signIn/SignIn.module.css';
 import {
   onAuthStateChanged,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  signOut,
 } from 'firebase/auth';
-import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import {useEffect} from 'react';
+import {useState} from 'react';
+import {Helmet} from 'react-helmet-async';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
-
+import {useNavigate} from 'react-router-dom';
 
 const SignIn = () => {
   const [id, setId] = useState('');
@@ -20,16 +21,19 @@ const SignIn = () => {
 
   const navigator = useNavigate();
 
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+  }, []);
 
   const handleLogin = async () => {
     try {
-      const user = await signInWithEmailAndPassword(auth, id, password);
+      await signInWithEmailAndPassword(auth, id, password);
+      localStorage.setItem('id', id);
       toast.success('로그인 되었습니다.');
       setTimeout(() => {
-        navigator('/');
+        navigator('/main');
       }, 1000);
     } catch (error) {
       toast.error('로그인에 실패하였습니다.');
