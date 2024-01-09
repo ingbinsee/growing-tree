@@ -1,0 +1,6 @@
+.link {
+  & ul {
+    @apply pt-12;
+    @apply overflow-scroll;
+  }
+}
