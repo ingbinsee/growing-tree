@@ -4,7 +4,7 @@
 }
 
 .sectionTitle {
-  @apply text-contentPrimary font-heading text-xl;
+  @apply font-heading text-xl;
   @apply block;
 }
 
@@ -14,12 +14,12 @@
   @apply flex;
 
   .title {
-    @apply text-contentPrimary font-label;
+    @apply font-label;
     @apply flex-1;
   }
 
   .date {
-    @apply text-contentTertiary font-paragraph;
+    @apply text-contentTertiary;
   }
 }
 
@@ -28,13 +28,13 @@
   @apply text-medium;
 
   & label {
-    @apply font-label text-contentPrimary;
+    @apply font-label;
   }
 
   & input {
     @apply flex-1 p-3;
     @apply border border-borderDefault rounded-[4px];
-    @apply font-paragraph text-contentTertiary;
+    @apply text-contentTertiary;
   }
 
   .rowLabel {

@@ -8,7 +8,7 @@
       @apply relative;
 
       & span {
-        @apply text-red-500 font-paragraph text-small pt-1 absolute;
+        @apply text-red-500 text-small pt-1 absolute;
       }
     }
   }
@@ -39,7 +39,7 @@
       @apply flex gap-2 items-center justify-end;
 
       & label {
-        @apply font-paragraph text-small;
+        @apply text-small;
       }
     }
   }

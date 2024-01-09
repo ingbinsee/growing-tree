@@ -2,6 +2,7 @@
   @apply font-pretendard;
   @apply min-w-[320px] max-w-[767px] m-auto min-h-screen;
   @apply flex flex-col;
+  @apply text-contentPrimary font-paragraph;
 
   .header {
     @apply bg-primary;
