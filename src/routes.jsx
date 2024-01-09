@@ -7,6 +7,7 @@ import RootLayout from './layout/RootLayout';
 import Collection from './pages/Collection';
 import Home from './pages/Home';
 import List from './pages/List';
+import Main from './pages/Main';
 import Setting from './pages/Setting';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
@@ -15,7 +16,8 @@ import TreeName from './pages/TreeName';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route index element={<Home />} />
+      <Route index element={<Home />} />      
+      <Route path="/main" element={<Main />} />
       <Route path="/collection" element={<Collection />} />
       <Route path="/list" element={<List />} />
       <Route path="/setting" element={<Setting />} />
