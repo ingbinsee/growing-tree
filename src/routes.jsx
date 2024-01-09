@@ -10,6 +10,7 @@ import List from './pages/List';
 import Setting from './pages/Setting';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import TreeName from './pages/TreeName';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
       <Route path="/setting" element={<Setting />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/treename" element={<TreeName />} />
     </Route>
   )
 );

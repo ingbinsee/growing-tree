@@ -1,0 +1,15 @@
+.treeName {
+  @apply flex flex-col gap-12;
+
+  .buttonSection {
+    @apply flex gap-6;
+
+    .positiveButton {
+      @apply bg-positive/80 hover:bg-positive flex-1;
+    }
+
+    .negativeButton {
+      @apply bg-negative/80 hover:bg-negative flex-1;
+    }
+  }
+}

@@ -13,16 +13,13 @@ function ButtonSection({id, password, isChecked}) {
         toast.error('개인정보 수집 및 이용에 동의해 주세요.');
       } else {
         const user = await createUserWithEmailAndPassword(auth, id, password);
-        toast.success('가입되었습니다.');
-        setTimeout(() => {
-          navigate('/');
-        }, 1000);
+        navigate('/treename');
       }
     } catch (error) {
       if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
         toast.error('이미 존재하는 아이디입니다.');
       } else {
-        toast.error('가입에 실패하였습니다.');
+        toast.error('다시 시도해 주시기 바랍니다.');
       }
     }
   };
@@ -35,7 +32,7 @@ function ButtonSection({id, password, isChecked}) {
     <section className={styles.buttonSrcion}>
       <Button
         type="submit"
-        text="가입"
+        text="다음"
         className={styles.positiveButton}
         onClick={handleRegister}
       />
