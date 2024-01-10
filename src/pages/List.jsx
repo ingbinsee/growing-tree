@@ -13,15 +13,15 @@ function List() {
   const userId = localStorage.getItem('id');
 
   useEffect(() => {
-    const fetchUsers = async () => {
+    const fetchData = async () => {
       try {
-        const usersCollectionRef = collection(db, 'growth');
+        const growthCollectionRef = collection(db, 'growth');
         const queryData = query(
-          usersCollectionRef,
+          growthCollectionRef,
           where('email', '==', userId)
         );
-        const userSnap = await getDocs(queryData);
-        const data = userSnap.docs.map((doc) => ({
+        const growthSnap = await getDocs(queryData);
+        const data = growthSnap.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
         }));
@@ -30,7 +30,7 @@ function List() {
         toast.error(error);
       }
     };
-    fetchUsers();
+    fetchData();
   }, []);
 
   const sortedList = list?.slice().toSorted((a, b) => b.date - a.date);
@@ -43,11 +43,11 @@ function List() {
       <div className={styles.link}>
         <SectionTitle text="행복 저장소" />
         <ul>
-          {sortedList?.map(({id, content, date}) => (
+          {sortedList?.map(({id, title, date}) => (
             <li key={id}>
               <Link to={`/list/${id}`}>
                 <DateList
-                  title={content}
+                  title={title}
                   date={date.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')}
                 />
               </Link>
