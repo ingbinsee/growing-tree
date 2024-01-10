@@ -8,26 +8,26 @@ import step7 from '@/assets/tree/step7.png';
 import step8 from '@/assets/tree/step8.png';
 import step9 from '@/assets/tree/step9.png';
 
-function TreeInfo({num, name}) {
+function TreeInfo({waterNum, name}) {
   return (
     <fieldset>
       <img
         src={
-          num <= 1
+          waterNum <= 1
             ? step1
-            : num <= 5
+            : waterNum <= 5
             ? step2
-            : num <= 10
+            : waterNum <= 10
             ? step3
-            : num <= 20
+            : waterNum <= 20
             ? step4
-            : num <= 30
+            : waterNum <= 30
             ? step5
-            : num <= 40
+            : waterNum <= 40
             ? step6
-            : num <= 60
+            : waterNum <= 60
             ? step7
-            : num <= 80
+            : waterNum <= 80
             ? step8
             : step9
         }

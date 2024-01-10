@@ -1,6 +1,6 @@
 .main {
   @apply flex flex-col justify-between;
-  @apply min-h-[400px];
+  @apply min-h-[450px];
 
   .treeSection {
     @apply flex flex-col items-center gap-12;
