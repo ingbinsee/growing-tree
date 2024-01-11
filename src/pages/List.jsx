@@ -1,7 +1,7 @@
 import DateList from '@/components/DateList';
 import SectionTitle from '@/components/SectionTitle';
 import { db } from '@/firebase';
-import styles from '@/parts/link/Link.module.css';
+import styles from '@/parts/list/List.module.css';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -34,7 +34,7 @@ function List() {
   }, []);
 
   const sortedList = list?.slice().toSorted((a, b) => b.date - a.date);
-  localStorage.setItem('listLength', sortedList.length);
+  localStorage.setItem('listLength', sortedList?.length);
 
   return (
     <>
