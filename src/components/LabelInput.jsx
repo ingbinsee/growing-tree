@@ -1,8 +1,8 @@
+import { uid } from 'uid';
 import styles from './components.module.css';
-import {v4 as uuidv4} from 'uuid';
 
 function LabelInput({labelText, type, placeholder, direction, ...restProps}) {
-  const id = uuidv4();
+  const id = uid();
   return (
     <div
       className={`${styles.labelInput}

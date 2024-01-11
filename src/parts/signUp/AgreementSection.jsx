@@ -1,8 +1,8 @@
-import {v4 as uuidv4} from 'uuid';
+import { uid } from 'uid';
 import styles from './SignUp.module.css';
 
 function AgreementSection({isChecked, setIsChecked}) {
-  const checkId = uuidv4();
+  const checkId = uid();
 
   return (
     <section className={styles.agreementSection}>
@@ -33,7 +33,7 @@ function AgreementSection({isChecked, setIsChecked}) {
         </li>
         <li>※ 동의를 거부할 경우에는 서비스 이용에 제한됨을 알려드립니다.</li>
       </ol>
-      <fieldset>
+      <div className={styles.checkbox}>
         <input
           type="checkbox"
           id={checkId}
@@ -43,7 +43,7 @@ function AgreementSection({isChecked, setIsChecked}) {
           }}
         />
         <label htmlFor={checkId}>동의합니다.</label>
-      </fieldset>
+      </div>
     </section>
   );
 }
