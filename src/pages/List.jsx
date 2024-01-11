@@ -34,7 +34,6 @@ function List() {
   }, []);
 
   const sortedList = list?.slice().toSorted((a, b) => b.date - a.date);
-  localStorage.setItem('listLength', sortedList?.length);
 
   return (
     <>

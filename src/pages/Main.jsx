@@ -1,17 +1,17 @@
 import SectionTitle from '@/components/SectionTitle';
-import { db } from '@/firebase';
+import {db} from '@/firebase';
 import styles from '@/parts/main/Main.module.css';
 import TreeInfo from '@/parts/main/TreeInfo';
 import WaterInfo from '@/parts/main/WaterInfo';
-import { collection, getDocs, query, where } from 'firebase/firestore';
-import { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import {collection, getDocs, query, where} from 'firebase/firestore';
+import {useEffect, useState} from 'react';
+import {Helmet} from 'react-helmet-async';
 import toast from 'react-hot-toast';
 
 function Main() {
   const [name, setName] = useState();
+  const [length, setLength] = useState();
   const userId = localStorage.getItem('id');
-  const waterNum = localStorage.getItem('listLength');
 
   useEffect(() => {
     const fetchTreeName = async () => {
@@ -33,10 +33,27 @@ function Main() {
     };
     fetchTreeName();
 
-
-
-    
+    const fetchData = async () => {
+      try {
+        const growthCollectionRef = collection(db, 'growth');
+        const queryData = query(
+          growthCollectionRef,
+          where('email', '==', userId)
+        );
+        const growthSnap = await getDocs(queryData);
+        const data = growthSnap.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        return setLength(data);
+      } catch (error) {
+        toast.error(error);
+      }
+    };
+    fetchData();
   }, []);
+
+  const waterNum = length?.length;
 
   return (
     <>
