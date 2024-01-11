@@ -13,6 +13,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import TreeName from './pages/TreeName';
 import ListDetail from './pages/ListDetail';
+import ListEdit from './pages/ListEdit';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
       <Route path="/collection" element={<Collection />} />
       <Route path="/list" element={<List />} />
       <Route path="/list/:id" element={<ListDetail />} />
+      <Route path="/list/:id/edit" element={<ListEdit />} />
       <Route path="/setting" element={<Setting />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />

@@ -7,10 +7,9 @@ import {collection, getDocs, query, where} from 'firebase/firestore';
 import {useEffect, useState} from 'react';
 import {Helmet} from 'react-helmet-async';
 import toast from 'react-hot-toast';
-import {useNavigate} from 'react-router-dom';
 
 function ListDetail() {
-  const [ListDetail, setListDetail] = useState();
+  const [listDetail, setListDetail] = useState();
   const useId = location.pathname.slice(6);
 
   useEffect(() => {
@@ -31,8 +30,11 @@ function ListDetail() {
     fetchData();
   }, []);
 
-  if (ListDetail) {
-    const {title, date, content} = ListDetail[0];
+  if (listDetail) {
+    const {title, date, content} = listDetail[0];
+    localStorage.setItem('listTitle', title);
+    localStorage.setItem('listDate', date);
+    localStorage.setItem('listContent', content);
     return (
       <>
         <Helmet>
@@ -47,7 +49,7 @@ function ListDetail() {
             />
             <p className={styles.content}>{content}</p>
           </fieldset>
-          <ButtonSection />
+          <ButtonSection useId={useId} />
         </div>
       </>
     );
