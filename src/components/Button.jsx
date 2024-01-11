@@ -7,7 +7,7 @@ function Button({type, text, className, ...restProps}) {
       className={`${styles.button} ${className}`}
       {...restProps}
     >
-      <h3>{text}</h3>
+      {text}
     </button>
   );
 }

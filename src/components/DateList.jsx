@@ -3,7 +3,7 @@ import styles from './components.module.css'
 function DateList({title, date}) {
   return (
     <p className={styles.dateList}>
-      <span className={styles.title}>{title}</span>
+      <h3 className={styles.title}>{title}</h3>
       <span className={styles.date}>{date}</span>
     </p>
   );

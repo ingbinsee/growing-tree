@@ -33,7 +33,7 @@ function TreeInfo({waterNum, name}) {
         }
         alt={`${name}의 나무`}
       />
-      <figcaption>{name}</figcaption>
+      <figcaption><h3>{name}</h3></figcaption>
     </fieldset>
   );
 }
