@@ -42,13 +42,13 @@ function ListDetail() {
         </Helmet>
         <div className={styles.listDetail}>
           <SectionTitle text="행복 들여다보기" />
-          <fieldset>
+          <div className={styles.contentSection}>
             <DateList
               title={title}
               date={date.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')}
             />
             <p className={styles.content}>{content}</p>
-          </fieldset>
+          </div>
           <ButtonSection useId={useId} />
         </div>
       </>

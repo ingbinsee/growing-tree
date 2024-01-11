@@ -5,7 +5,7 @@
   .treeSection {
     @apply flex flex-col items-center gap-12;
 
-    & fieldset {
+    & figure {
       @apply flex flex-col gap-6;
 
       & figcaption {

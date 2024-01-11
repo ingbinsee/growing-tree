@@ -1,7 +1,7 @@
 .listEdit {
   @apply flex flex-col gap-12;
 
-  & fieldset {
+  .contentSection {
     @apply flex flex-col gap-2;
 
     & textarea {

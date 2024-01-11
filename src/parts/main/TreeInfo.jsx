@@ -10,7 +10,7 @@ import step9 from '@/assets/tree/step9.png';
 
 function TreeInfo({waterNum, name}) {
   return (
-    <fieldset>
+    <figure>
       <img
         src={
           waterNum <= 1
@@ -34,7 +34,7 @@ function TreeInfo({waterNum, name}) {
         alt={`${name}의 나무`}
       />
       <figcaption><h3>{name}</h3></figcaption>
-    </fieldset>
+    </figure>
   );
 }
 
