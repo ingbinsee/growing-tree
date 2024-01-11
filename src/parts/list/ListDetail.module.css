@@ -1,0 +1,26 @@
+.listDetail {
+  @apply flex flex-col gap-12;
+
+  & fieldset {
+    @apply flex flex-col gap-2;
+
+    .content {
+      @apply px-3 pb-12;
+      @apply text-medium;
+    }
+  }
+
+ & section {
+    @apply flex gap-6;
+
+    .positiveButton {
+      @apply bg-positive/80 hover:bg-positive;
+      @apply flex-1;
+    }
+
+    .defaultButton {
+      @apply bg-secondary/80 hover:bg-secondary;
+      @apply flex-1;
+    }
+  }
+}
