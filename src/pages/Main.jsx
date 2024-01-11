@@ -55,20 +55,22 @@ function Main() {
 
   const waterNum = length?.length;
 
-  return (
-    <>
-      <Helmet>
-        <title>GROWING | 나의 나무</title>
-      </Helmet>
-      <div className={styles.main}>
-        <SectionTitle text="나의 나무" />
-        <section className={styles.treeSection}>
-          {name && <TreeInfo waterNum={waterNum} name={name[0].name} />}
-          <WaterInfo waterNum={waterNum} />
-        </section>
-      </div>
-    </>
-  );
+  if (name) {
+    return (
+      <>
+        <Helmet>
+          <title>GROWING | 나의 나무</title>
+        </Helmet>
+        <div className={styles.main}>
+          <SectionTitle text="나의 나무" />
+          <section className={styles.treeSection}>
+            <TreeInfo waterNum={waterNum} name={name[0].name} />
+            <WaterInfo waterNum={waterNum} />
+          </section>
+        </div>
+      </>
+    );
+  }
 }
 
 export default Main;
