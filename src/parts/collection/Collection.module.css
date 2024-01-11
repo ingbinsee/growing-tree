@@ -1,0 +1,36 @@
+.collection {
+  @apply flex flex-col gap-12;
+
+  .infoSection {
+    @apply flex flex-col gap-6;
+  }
+
+  .content {
+    @apply flex flex-col gap-3;
+    @apply text-medium;
+
+    & label {
+      @apply font-label;
+    }
+
+    & textarea {
+      @apply border border-borderDefault rounded-[4px];
+      @apply flex-1 p-3;
+      @apply text-contentTertiary;
+    }
+  }
+
+  .buttonSection {
+    @apply flex gap-6;
+
+    .positiveButton {
+      @apply bg-positive/80 hover:bg-positive;
+      @apply flex-1;
+    }
+
+    .negativeButton {
+      @apply bg-negative/80 hover:bg-negative;
+      @apply flex-1;
+    }
+  }
+}

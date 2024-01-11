@@ -19,7 +19,7 @@
   }
 
   .date {
-    @apply text-contentTertiary;
+    @apply text-contentTertiary text-left w-[95px];
   }
 }
 
