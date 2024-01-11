@@ -1,12 +1,23 @@
 import Button from '@/components/Button';
-import styles from './TreeName.module.css';
+import { db } from '@/firebase';
+import { addDoc, collection } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
+import styles from './TreeName.module.css';
 
-function ButtonSection() {
+function ButtonSection({emailData, nameData}) {
   const navigate = useNavigate();
 
-  const hadleSetName = () => {
-    navigate('/signin');
+  const handleCreateName = async () => {
+    try {
+      const docRef = await addDoc(collection(db, 'tree'), {
+        email: emailData,
+        name: nameData,
+      });
+      console.log('Document written with ID: ', docRef.id);
+      navigate('/signin');
+    } catch (error) {
+      toast.error(error);
+    }
   };
 
   const hadleGoToPage = () => {
@@ -19,7 +30,7 @@ function ButtonSection() {
         type="submit"
         text="가입"
         className={styles.positiveButton}
-        onClick={hadleSetName}
+        onClick={handleCreateName}
       />
       <Button
         type="button"

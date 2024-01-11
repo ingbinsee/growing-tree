@@ -2,22 +2,12 @@ import LabelInput from '@/components/LabelInput';
 import SectionTitle from '@/components/SectionTitle';
 import ButtonSection from '@/parts/treeName/ButtonSection';
 import styles from '@/parts/treeName/TreeName.module.css';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 function TreeName() {
-  const [name, setName] = useState('');
-
-  useEffect(() => {
-    const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        user.displayName = name;
-        localStorage.setItem('treeName', name)
-      }
-    });
-  });
+  const [nameData, setNameData] = useState('');
+  const emailData = localStorage.getItem('id');
 
   return (
     <>
@@ -32,10 +22,10 @@ function TreeName() {
           placeholder="나무 이름을 입력해 주세요."
           direction="col"
           onChange={(e) => {
-            setName(e.target.value);
+            setNameData(e.target.value);
           }}
         />
-        <ButtonSection />
+        <ButtonSection emailData={emailData} nameData={nameData} />
       </div>
     </>
   );
