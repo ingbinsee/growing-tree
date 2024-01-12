@@ -1,8 +1,8 @@
 import LabelInput from '@/components/LabelInput';
-import { storage } from '@/firebase';
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
-import { func, string } from 'prop-types';
-import { uid } from 'uid';
+import {storage} from '@/firebase';
+import {getDownloadURL, ref, uploadBytes} from 'firebase/storage';
+import {func, string} from 'prop-types';
+import {uid} from 'uid';
 import styles from './ListEdit.module.css';
 
 function ContentSection({
@@ -15,6 +15,8 @@ function ContentSection({
   setEditContent,
   setEditImg,
 }) {
+  const imgEditId = uid();
+  const contentId = uid();
   const dt = new Date();
   const today =
     dt.getFullYear() +
@@ -23,7 +25,6 @@ function ContentSection({
     '-' +
     ('0' + dt.getDate()).slice(-2);
 
-  const imgEditId = uid();
   const editFB = async (e) => {
     const editFile = await uploadBytes(
       ref(storage, `images/${e.target.files[0].name}`),
@@ -58,7 +59,9 @@ function ContentSection({
         }}
       />
       <div className={styles.img}>
-        <label htmlFor={imgEditId}>이미지</label>
+        <label htmlFor={imgEditId}>
+          <h3>이미지</h3>
+        </label>
         <div>
           <input
             type="file"
@@ -69,15 +72,21 @@ function ContentSection({
           <img src={editImg} alt="업로드 이미지" />
         </div>
       </div>
-      <textarea
-        name="content"
-        cols="30"
-        rows="5"
-        defaultValue={listContent}
-        onChange={(e) => {
-          setEditContent(e.target.value);
-        }}
-      />
+      <div className={styles.content}>
+        <label htmlFor={contentId}>
+          <h3>내용</h3>
+        </label>
+        <textarea
+          id={contentId}
+          name="content"
+          cols="30"
+          rows="5"
+          defaultValue={listContent}
+          onChange={(e) => {
+            setEditContent(e.target.value);
+          }}
+        />
+      </div>
     </div>
   );
 }

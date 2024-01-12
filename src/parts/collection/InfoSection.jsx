@@ -1,9 +1,9 @@
 import placeholder from '@/assets/placeholder.jpeg';
 import LabelInput from '@/components/LabelInput';
-import { storage } from '@/firebase';
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
-import { func, string } from "prop-types";
-import { uid } from 'uid';
+import {storage} from '@/firebase';
+import {getDownloadURL, ref, uploadBytes} from 'firebase/storage';
+import {func, string} from 'prop-types';
+import {uid} from 'uid';
 import styles from './Collection.module.css';
 
 function InfoSection({
@@ -55,14 +55,16 @@ function InfoSection({
         }}
       />
       <div className={styles.img}>
-        <label htmlFor={imgId}>이미지</label>
+        <label htmlFor={imgId}>
+          <h3>이미지</h3>
+        </label>
         <div>
           <input type="file" accept="image/*" onChange={uploadFB} id={imgId} />
           <img src={imgData ? imgData : placeholder} alt="업로드 이미지" />
         </div>
       </div>
       <div className={styles.content}>
-        <label htmlFor={contentId}>내용</label>
+        <label htmlFor={contentId}><h3>내용</h3></label>
         <textarea
           name="content"
           id={contentId}
@@ -83,6 +85,6 @@ InfoSection.propTypes = {
   setContentData: func,
   setImgData: func,
   imgData: string,
-}
+};
 
 export default InfoSection;

@@ -2,9 +2,11 @@
   @apply flex flex-col gap-12;
 
   .contentSection {
-    @apply flex flex-col gap-2;
+    @apply flex flex-col gap-6;
 
     .img {
+      @apply flex flex-col gap-3;
+
       & label {
         @apply font-label;
       }
@@ -22,9 +24,17 @@
       }
     }
 
-    & textarea {
-      @apply border border-borderDefault rounded-[4px];
-      @apply w-full p-3;
+    .content {
+      @apply flex flex-col gap-3;
+
+      & label {
+        @apply font-label;
+      }
+
+      & textarea {
+        @apply border border-borderDefault rounded-[4px];
+        @apply w-full p-3;
+      }
     }
   }
 
