@@ -1,6 +1,6 @@
 import LabelInput from '@/components/LabelInput';
+import { func, string } from 'prop-types';
 import styles from './SignUp.module.css';
-import {useState} from 'react';
 
 function InfoSection({
   setId,
@@ -52,5 +52,13 @@ function InfoSection({
     </section>
   );
 }
+
+InfoSection.propTypes = {
+  setId: func,
+  setPassword: func,
+  password: string,
+  setPasswordRe: func,
+  passwordRe: string,
+};
 
 export default InfoSection;

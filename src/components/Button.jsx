@@ -1,3 +1,4 @@
+import { oneOf, string } from 'prop-types';
 import styles from './components.module.css';
 
 function Button({type, text, className, ...restProps}) {
@@ -11,5 +12,11 @@ function Button({type, text, className, ...restProps}) {
     </button>
   );
 }
+
+Button.propTypes = {
+  type: oneOf(['button', 'submit', 'reset']),
+  text: string,
+  className: string,
+};
 
 export default Button;

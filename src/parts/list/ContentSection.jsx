@@ -1,11 +1,20 @@
 import LabelInput from '@/components/LabelInput';
-import styles from './ListEdit.module.css';
-import {storage} from '@/firebase';
-import {getDownloadURL, ref, uploadBytes} from 'firebase/storage';
+import { storage } from '@/firebase';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { func, string } from 'prop-types';
 import { uid } from 'uid';
+import styles from './ListEdit.module.css';
 
-function ContentSection({listTitle, setEditTitle, listDate, setEditDate, editImg, listContent, setEditContent, setEditImg}) {
-
+function ContentSection({
+  listTitle,
+  setEditTitle,
+  listDate,
+  setEditDate,
+  editImg,
+  listContent,
+  setEditContent,
+  setEditImg,
+}) {
   const dt = new Date();
   const today =
     dt.getFullYear() +
@@ -72,5 +81,16 @@ function ContentSection({listTitle, setEditTitle, listDate, setEditDate, editImg
     </div>
   );
 }
+
+ContentSection.propTypes = {
+  listTitle: string,
+  setEditTitle: func,
+  listDate: string,
+  setEditDate: func,
+  editImg: string,
+  listContent: string,
+  setEditContent: func,
+  setEditImg: func,
+};
 
 export default ContentSection;

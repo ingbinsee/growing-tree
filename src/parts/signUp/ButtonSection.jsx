@@ -1,9 +1,10 @@
 import Button from '@/components/Button';
-import styles from './SignUp.module.css';
-import {createUserWithEmailAndPassword} from 'firebase/auth';
 import {auth} from '@/firebase';
+import {createUserWithEmailAndPassword} from 'firebase/auth';
+import {string} from 'prop-types';
 import toast from 'react-hot-toast';
 import {useNavigate} from 'react-router-dom';
+import styles from './SignUp.module.css';
 
 function ButtonSection({id, password, isChecked}) {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ function ButtonSection({id, password, isChecked}) {
       if (!isChecked) {
         toast.error('개인정보 수집 및 이용에 동의해 주세요.');
       } else {
-        const user = await createUserWithEmailAndPassword(auth, id, password);
+        await createUserWithEmailAndPassword(auth, id, password);
         navigate('/treename');
       }
     } catch (error) {
@@ -45,5 +46,11 @@ function ButtonSection({id, password, isChecked}) {
     </section>
   );
 }
+
+ButtonSection.propTypes = {
+  id: string,
+  password: string,
+  isChecked: string,
+};
 
 export default ButtonSection;

@@ -1,7 +1,6 @@
-import {Link} from 'react-router-dom';
-import styles from './Home.module.css';
 import Button from '@/components/Button';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import styles from './Home.module.css';
 
 function ButtonSection() {
   const navigate = useNavigate();

@@ -1,8 +1,9 @@
 import Button from '@/components/Button';
-import {db} from '@/firebase';
-import {addDoc, collection, doc, updateDoc} from 'firebase/firestore';
+import { db } from '@/firebase';
+import { addDoc, collection, doc, updateDoc } from 'firebase/firestore';
+import { string } from 'prop-types';
 import toast from 'react-hot-toast';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './Collection.module.css';
 
 function ButtonSection({contentData, titleData, dateData, emailData, imgData}) {
@@ -51,5 +52,13 @@ function ButtonSection({contentData, titleData, dateData, emailData, imgData}) {
     </section>
   );
 }
+
+ButtonSection.propTypes = {
+  contentData: string,
+  titleData: string,
+  dateData: string,
+  emailData: string,
+  imgData: string,
+};
 
 export default ButtonSection;

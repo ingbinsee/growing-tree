@@ -1,9 +1,10 @@
-import LabelInput from '@/components/LabelInput';
-import {storage} from '@/firebase';
-import {getDownloadURL, ref, uploadBytes} from 'firebase/storage';
-import {uid} from 'uid';
-import styles from './Collection.module.css';
 import placeholder from '@/assets/placeholder.jpeg';
+import LabelInput from '@/components/LabelInput';
+import { storage } from '@/firebase';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { func, string } from "prop-types";
+import { uid } from 'uid';
+import styles from './Collection.module.css';
 
 function InfoSection({
   setTitleData,
@@ -54,12 +55,10 @@ function InfoSection({
         }}
       />
       <div className={styles.img}>
-        <label htmlFor={imgId}>
-          <span>이미지</span>
-        </label>
+        <label htmlFor={imgId}>이미지</label>
         <div>
-        <input type="file" accept="image/*" onChange={uploadFB} />
-        <img src={imgData ? imgData : placeholder} alt="업로드 이미지" />
+          <input type="file" accept="image/*" onChange={uploadFB} id={imgId} />
+          <img src={imgData ? imgData : placeholder} alt="업로드 이미지" />
         </div>
       </div>
       <div className={styles.content}>
@@ -76,6 +75,14 @@ function InfoSection({
       </div>
     </section>
   );
+}
+
+InfoSection.propTypes = {
+  setTitleData: func,
+  setDateData: func,
+  setContentData: func,
+  setImgData: func,
+  imgData: string,
 }
 
 export default InfoSection;

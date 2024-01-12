@@ -1,4 +1,5 @@
-import { uid } from 'uid';
+import {func, string} from 'prop-types';
+import {uid} from 'uid';
 import styles from './SignUp.module.css';
 
 function AgreementSection({isChecked, setIsChecked}) {
@@ -47,5 +48,10 @@ function AgreementSection({isChecked, setIsChecked}) {
     </section>
   );
 }
+
+AgreementSection.propTypes = {
+  isChecked: string,
+  setIsChecked: func,
+};
 
 export default AgreementSection;

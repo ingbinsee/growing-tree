@@ -7,6 +7,7 @@ import step6 from '@/assets/tree/step6.png';
 import step7 from '@/assets/tree/step7.png';
 import step8 from '@/assets/tree/step8.png';
 import step9 from '@/assets/tree/step9.png';
+import { number, string } from 'prop-types';
 
 function TreeInfo({waterNum, name}) {
   return (
@@ -33,9 +34,16 @@ function TreeInfo({waterNum, name}) {
         }
         alt={`${name}의 나무`}
       />
-      <figcaption><h3>{name}</h3></figcaption>
+      <figcaption>
+        <h3>{name}</h3>
+      </figcaption>
     </figure>
   );
 }
+
+TreeInfo.propTypes = {
+  waterNum: number,
+  name: string,
+};
 
 export default TreeInfo;

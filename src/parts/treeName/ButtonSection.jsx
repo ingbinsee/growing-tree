@@ -1,15 +1,17 @@
 import Button from '@/components/Button';
-import { db } from '@/firebase';
-import { addDoc, collection } from 'firebase/firestore';
-import { useNavigate } from 'react-router-dom';
+import {db} from '@/firebase';
+import {addDoc, collection} from 'firebase/firestore';
+import {string} from 'prop-types';
+import {useNavigate} from 'react-router-dom';
 import styles from './TreeName.module.css';
+import toast from 'react-hot-toast';
 
 function ButtonSection({emailData, nameData}) {
   const navigate = useNavigate();
 
   const handleCreateName = async () => {
     try {
-      const docRef = await addDoc(collection(db, 'tree'), {
+      await addDoc(collection(db, 'tree'), {
         email: emailData,
         name: nameData,
       });
@@ -40,5 +42,10 @@ function ButtonSection({emailData, nameData}) {
     </section>
   );
 }
+
+ButtonSection.propTypes = {
+  emailData: string,
+  nameData: string,
+};
 
 export default ButtonSection;

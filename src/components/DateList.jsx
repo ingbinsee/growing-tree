@@ -1,4 +1,5 @@
-import styles from './components.module.css'
+import { string } from 'prop-types';
+import styles from './components.module.css';
 
 function DateList({title, date}) {
   return (
@@ -8,5 +9,10 @@ function DateList({title, date}) {
     </p>
   );
 }
+
+DateList.propTypes = {
+  title: string,
+  date: string,
+};
 
 export default DateList;

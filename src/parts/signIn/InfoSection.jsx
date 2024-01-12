@@ -1,4 +1,5 @@
 import LabelInput from '@/components/LabelInput';
+import {func} from 'prop-types';
 import styles from './SignIn.module.css';
 
 function InfoSection({setId, setPassword}) {
@@ -25,5 +26,10 @@ function InfoSection({setId, setPassword}) {
     </section>
   );
 }
+
+InfoSection.propTypes = {
+  setId: func,
+  setPassword: func,
+};
 
 export default InfoSection;

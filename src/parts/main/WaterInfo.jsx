@@ -1,3 +1,4 @@
+import {number} from 'prop-types';
 import styles from './Main.module.css';
 import WaterIcon from './WaterIcon';
 
@@ -12,5 +13,9 @@ function WaterInfo({waterNum}) {
     </div>
   );
 }
+
+WaterInfo.propTypes = {
+  waterNum: number,
+};
 
 export default WaterInfo;

@@ -1,3 +1,4 @@
+import { oneOf, string } from 'prop-types';
 import { uid } from 'uid';
 import styles from './components.module.css';
 
@@ -16,5 +17,23 @@ function LabelInput({labelText, type, placeholder, direction, ...restProps}) {
     </div>
   );
 }
+
+LabelInput.propTypes = {
+  labelText: string,
+  type: oneOf([
+    'text',
+    'date',
+    'button',
+    'checkbox',
+    'email',
+    'file',
+    'email',
+    'password',
+    'radio',
+    'submit',
+  ]),
+  placeholder: string,
+  direction: string,
+};
 
 export default LabelInput;

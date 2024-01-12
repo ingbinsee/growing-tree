@@ -1,8 +1,9 @@
 import Button from '@/components/Button';
-import {db} from '@/firebase';
-import {doc, updateDoc} from 'firebase/firestore';
+import { db } from '@/firebase';
+import { doc, updateDoc } from 'firebase/firestore';
+import { string } from 'prop-types';
 import toast from 'react-hot-toast';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './ListEdit.module.css';
 
 function EditButtonSection({editTitle, editDate, editContent, useId, editImg}) {
@@ -48,5 +49,13 @@ function EditButtonSection({editTitle, editDate, editContent, useId, editImg}) {
     </section>
   );
 }
+
+EditButtonSection.propTypes = {
+  editTitle: string,
+  editDate: string,
+  editContent: string,
+  useId: string,
+  editImg: string,
+};
 
 export default EditButtonSection;

@@ -1,5 +1,6 @@
 import Button from '@/components/Button';
-import {useNavigate} from 'react-router-dom';
+import { string } from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import styles from './ListDetail.module.css';
 
 function ButtonSection({useId}) {
@@ -40,5 +41,9 @@ function ButtonSection({useId}) {
     </section>
   );
 }
+
+ButtonSection.propTypes = {
+  useId: string,
+};
 
 export default ButtonSection;

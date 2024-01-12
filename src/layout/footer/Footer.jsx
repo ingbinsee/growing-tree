@@ -1,9 +1,8 @@
-import React from 'react';
-import {NavLink} from 'react-router-dom';
-import styles from '@/layout/RootLayout.module.css'
+import styles from '@/layout/RootLayout.module.css';
+import { NavLink } from 'react-router-dom';
 import CollectionIcon from './icons/CollectionIcon';
-import SettingIcon from './icons/SettingIcon';
 import ListIcon from './icons/ListIcon';
+import SettingIcon from './icons/SettingIcon';
 
 function Footer() {
   return (
