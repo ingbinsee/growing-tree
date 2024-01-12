@@ -1,11 +1,11 @@
 import Button from '@/components/Button';
-import styles from './ListEdit.module.css';
 import {db} from '@/firebase';
 import {doc, updateDoc} from 'firebase/firestore';
 import toast from 'react-hot-toast';
 import {useNavigate} from 'react-router-dom';
+import styles from './ListEdit.module.css';
 
-function EditButtonSection({editTitle, editDate, editContent, useId}) {
+function EditButtonSection({editTitle, editDate, editContent, useId, editImg}) {
   const navigate = useNavigate();
   const handleDataUpdate = async () => {
     try {
@@ -13,6 +13,7 @@ function EditButtonSection({editTitle, editDate, editContent, useId}) {
         title: editTitle,
         date: editDate,
         content: editContent,
+        img: editImg,
       });
       toast.success('수정하였습니다.');
       localStorage.removeItem('listTitle');

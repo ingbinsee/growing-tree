@@ -4,6 +4,24 @@
   .contentSection {
     @apply flex flex-col gap-2;
 
+    .img {
+      & label {
+        @apply font-label;
+      }
+
+      & div {
+        @apply flex flex-col gap-3;
+
+        & input {
+          @apply text-contentTertiary;
+        }
+
+        & img {
+          @apply w-[200px];
+        }
+      }
+    }
+
     & textarea {
       @apply border border-borderDefault rounded-[4px];
       @apply w-full p-3;

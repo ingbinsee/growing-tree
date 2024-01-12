@@ -1,18 +1,20 @@
-import DateList from '@/components/DateList';
+import SectionTitle from '@/components/SectionTitle';
+import ContentSection from '@/parts/list/ContentSection';
+import EditButtonSection from '@/parts/list/EditButtonSection';
+import styles from '@/parts/list/ListEdit.module.css';
 import {useState} from 'react';
 import {Helmet} from 'react-helmet-async';
-import SectionTitle from '@/components/SectionTitle';
-import styles from '@/parts/list/ListEdit.module.css';
-import EditButtonSection from '@/parts/list/EditButtonSection';
 
 function ListEdit() {
   const useId = location.pathname.slice(6, -5);
   const listTitle = localStorage.getItem('listTitle');
   const listDate = localStorage.getItem('listDate');
   const listContent = localStorage.getItem('listContent');
+  const listImg = localStorage.getItem('listImg');
   const [editTitle, setEditTitle] = useState(listTitle);
   const [editDate, setEditDate] = useState(listDate);
   const [editContent, setEditContent] = useState(listContent);
+  const [editImg, setEditImg] = useState(listImg);
 
   return (
     <>
@@ -21,35 +23,21 @@ function ListEdit() {
       </Helmet>
       <div className={styles.listEdit}>
         <SectionTitle text="수정하기" />
-        <div className={styles.contentSection}>
-          <input
-            type="text"
-            defaultValue={listTitle}
-            onChange={(e) => {
-              setEditTitle(e.target.value);
-            }}
-          />
-          <input
-            type="date"
-            defaultValue={listDate.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')}
-            onChange={(e) => {
-              setEditDate(e.target.value.replace(/-/g, ''));
-            }}
-          />
-          <textarea
-            name="content"
-            cols="30"
-            rows="5"
-            defaultValue={listContent}
-            onChange={(e) => {
-              setEditContent(e.target.value);
-            }}
-          />
-        </div>
+        <ContentSection
+          listTitle={listTitle}
+          listDate={listDate}
+          editImg={editImg}
+          listContent={listContent}
+          setEditTitle={setEditTitle}
+          setEditDate={setEditDate}
+          setEditContent={setEditContent}
+          setEditImg={setEditImg}
+        />
         <EditButtonSection
           editTitle={editTitle}
           editDate={editDate}
           editContent={editContent}
+          editImg={editImg}
           useId={useId}
         />
       </div>
