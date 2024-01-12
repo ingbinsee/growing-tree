@@ -5,12 +5,13 @@ import {doc, updateDoc} from 'firebase/firestore';
 import toast from 'react-hot-toast';
 import {useNavigate} from 'react-router-dom';
 
-function EditButtonSection({editContent, useId}) {
+function EditButtonSection({editTitle, editDate, editContent, useId}) {
   const navigate = useNavigate();
-
   const handleDataUpdate = async () => {
     try {
       await updateDoc(doc(db, 'growth', useId), {
+        title: editTitle,
+        date: editDate,
         content: editContent,
       });
       toast.success('수정하였습니다.');

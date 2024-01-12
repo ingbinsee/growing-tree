@@ -10,6 +10,8 @@ function ListEdit() {
   const listTitle = localStorage.getItem('listTitle');
   const listDate = localStorage.getItem('listDate');
   const listContent = localStorage.getItem('listContent');
+  const [editTitle, setEditTitle] = useState(listTitle);
+  const [editDate, setEditDate] = useState(listDate);
   const [editContent, setEditContent] = useState(listContent);
 
   return (
@@ -20,13 +22,22 @@ function ListEdit() {
       <div className={styles.listEdit}>
         <SectionTitle text="수정하기" />
         <div className={styles.contentSection}>
-          <DateList
-            title={listTitle}
-            date={listDate.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')}
+          <input
+            type="text"
+            defaultValue={listTitle}
+            onChange={(e) => {
+              setEditTitle(e.target.value);
+            }}
+          />
+          <input
+            type="date"
+            defaultValue={listDate.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')}
+            onChange={(e) => {
+              setEditDate(e.target.value.replace(/-/g, ''));
+            }}
           />
           <textarea
             name="content"
-            id={useId}
             cols="30"
             rows="5"
             defaultValue={listContent}
@@ -35,7 +46,12 @@ function ListEdit() {
             }}
           />
         </div>
-        <EditButtonSection editContent={editContent} useId={useId} />
+        <EditButtonSection
+          editTitle={editTitle}
+          editDate={editDate}
+          editContent={editContent}
+          useId={useId}
+        />
       </div>
     </>
   );
