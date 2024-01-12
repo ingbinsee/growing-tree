@@ -4,10 +4,19 @@
   .contentSection {
     @apply flex flex-col gap-2;
 
-    .content {
-      @apply px-3 pb-12;
-      @apply text-medium;
+    & figure {
+      @apply flex gap-6;
+
+      & img {
+        @apply w-[230px];
+      }
+      .content {
+        @apply px-3 py-3 rounded-xl;
+        @apply flex-1;
+        @apply bg-positive/20;
+      }
     }
+   
   }
 
   & section {

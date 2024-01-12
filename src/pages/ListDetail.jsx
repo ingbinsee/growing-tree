@@ -31,10 +31,11 @@ function ListDetail() {
   }, []);
 
   if (listDetail) {
-    const {title, date, content} = listDetail[0];
+    const {title, date, content, img} = listDetail[0];
     localStorage.setItem('listTitle', title);
     localStorage.setItem('listDate', date);
     localStorage.setItem('listContent', content);
+    localStorage.setItem('listImg', img);
     return (
       <>
         <Helmet>
@@ -47,7 +48,10 @@ function ListDetail() {
               title={title}
               date={date.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')}
             />
+            <figure>
+            <img src={img} alt={title} />
             <p className={styles.content}>{content}</p>
+            </figure>
           </div>
           <ButtonSection useId={useId} />
         </div>
@@ -55,5 +59,6 @@ function ListDetail() {
     );
   }
 }
+
 
 export default ListDetail;
