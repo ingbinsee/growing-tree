@@ -3,6 +3,26 @@
 
   .infoSection {
     @apply flex flex-col gap-6;
+
+    .img {
+      @apply flex gap-6;
+
+      & label {
+        @apply font-label;
+      }
+
+      & div {
+        @apply flex flex-col gap-3;
+
+        & input {
+          @apply text-contentTertiary;
+        }
+
+        & img {
+          @apply w-[200px];
+        }
+      }
+    }
   }
 
   .content {

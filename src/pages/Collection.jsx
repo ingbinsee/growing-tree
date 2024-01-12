@@ -9,6 +9,7 @@ function Collection() {
   const [titleData, setTitleData] = useState();
   const [contentData, setContentData] = useState();
   const [dateData, setDateData] = useState();
+  const [imgData, setImgData] = useState('');
   const emailData = localStorage.getItem('id');
 
   return (
@@ -22,12 +23,15 @@ function Collection() {
           setTitleData={setTitleData}
           setDateData={setDateData}
           setContentData={setContentData}
+          setImgData={setImgData}
+          imgData={imgData}
         />
         <ButtonSection
           contentData={contentData}
           titleData={titleData}
           dateData={dateData}
           emailData={emailData}
+          imgData={imgData}
         />
       </div>
     </>

@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 import {useNavigate} from 'react-router-dom';
 import styles from './Collection.module.css';
 
-function ButtonSection({contentData, titleData, dateData, emailData}) {
+function ButtonSection({contentData, titleData, dateData, emailData, imgData}) {
   const navigate = useNavigate();
   const handleCreate = async () => {
     try {
@@ -14,10 +14,12 @@ function ButtonSection({contentData, titleData, dateData, emailData}) {
         title: titleData,
         date: dateData,
         email: emailData,
+        img: '',
         uid: '',
       });
       await updateDoc(doc(db, 'growth', docRef.id), {
         uid: docRef.id,
+        img: imgData,
       });
       toast.success('등록되었습니다.');
       setTimeout(() => {
