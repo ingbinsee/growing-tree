@@ -47,7 +47,7 @@ function InfoSection({
       <LabelInput
         labelText="날짜"
         type="date"
-        placeholder=""
+        placeholder="연도.월.일."
         max={today}
         direction="col"
         onChange={(e) => {
