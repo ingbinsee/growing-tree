@@ -4,16 +4,20 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import RootLayout from './layout/RootLayout';
+import ChangePassword from './pages/ChangePassword';
+import ChangeTreeName from './pages/ChangeTreeName';
 import Collection from './pages/Collection';
 import Home from './pages/Home';
 import List from './pages/List';
+import ListDetail from './pages/ListDetail';
+import ListEdit from './pages/ListEdit';
 import Main from './pages/Main';
 import Setting from './pages/Setting';
 import SignIn from './pages/SignIn';
+import SignOut from './pages/SignOut';
 import SignUp from './pages/SignUp';
 import TreeName from './pages/TreeName';
-import ListDetail from './pages/ListDetail';
-import ListEdit from './pages/ListEdit';
+import Withdrawal from './pages/Withdrawal';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,10 +28,14 @@ const router = createBrowserRouter(
       <Route path="/list" element={<List />} />
       <Route path="/list/:id" element={<ListDetail />} />
       <Route path="/list/:id/edit" element={<ListEdit />} />
-      <Route path="/setting" element={<Setting />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/signout" element={<SignOut />} />
+      <Route path="/withdrawal" element={<Withdrawal />} />
       <Route path="/treename" element={<TreeName />} />
+      <Route path="/setting" element={<Setting />} />
+      <Route path="/changepassword" element={<ChangePassword />} />
+      <Route path="/changetreename" element={<ChangeTreeName />} />
     </Route>
   )
 );

@@ -1,0 +1,18 @@
+.setting {
+  @apply flex flex-col gap-12;
+
+  & ul {
+    @apply flex flex-col gap-6;
+    @apply font-label text-large;
+
+    .listLink {
+      @apply flex gap-3 items-center;
+      @apply text-contentTertiary hover:text-contentPrimary;
+    }
+  }
+
+  .link {
+    @apply text-medium text-right;
+    @apply text-contentTertiary hover:text-contentPrimary;
+  }
+}
