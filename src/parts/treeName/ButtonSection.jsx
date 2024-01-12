@@ -13,7 +13,6 @@ function ButtonSection({emailData, nameData}) {
         email: emailData,
         name: nameData,
       });
-      console.log('Document written with ID: ', docRef.id);
       navigate('/signin');
     } catch (error) {
       toast.error(error);
