@@ -1,5 +1,5 @@
 .button {
-  @apply font-label text-large text-contentSecondary;
+  @apply font-label text-medium text-contentSecondary;
   @apply py-2 rounded-xl;
 }
 
