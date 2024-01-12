@@ -1,17 +1,19 @@
 import SectionTitle from '@/components/SectionTitle';
-import {db} from '@/firebase';
+import { db } from '@/firebase';
 import styles from '@/parts/main/Main.module.css';
 import TreeInfo from '@/parts/main/TreeInfo';
 import WaterInfo from '@/parts/main/WaterInfo';
-import {collection, getDocs, query, where} from 'firebase/firestore';
-import {useEffect, useState} from 'react';
-import {Helmet} from 'react-helmet-async';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 function Main() {
-  const [name, setName] = useState();
+  const [name, setName] = useState('');
   const [length, setLength] = useState();
   const userId = localStorage.getItem('id');
+  const nevigate = useNavigate();
 
   useEffect(() => {
     const fetchTreeName = async () => {
@@ -51,11 +53,11 @@ function Main() {
       }
     };
     fetchData();
-  }, []);
+  }, [userId]);
 
   const waterNum = length?.length;
 
-  if (name) {
+  if (name.length > 0) {
     return (
       <>
         <Helmet>
@@ -64,12 +66,16 @@ function Main() {
         <div className={styles.main}>
           <SectionTitle text="나의 나무" />
           <section className={styles.treeSection}>
-            <TreeInfo waterNum={waterNum} name={name[0].name} />
+            {name.map(({name}) => (
+              <TreeInfo waterNum={waterNum} name={name} key={name} />
+            ))}
             <WaterInfo waterNum={waterNum} />
           </section>
         </div>
       </>
     );
+  } else {
+    nevigate('/');
   }
 }
 
