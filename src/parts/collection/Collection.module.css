@@ -5,7 +5,7 @@
     @apply flex flex-col gap-6;
 
     .img {
-      @apply flex gap-6;
+      @apply flex flex-col gap-3;
 
       & label {
         @apply font-label;

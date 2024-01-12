@@ -1,12 +1,12 @@
 .home {
-  @apply flex flex-col gap-12 items-center;
+  @apply flex flex-col gap-6 items-center;
 
   & span {
     @apply text-[#4C6E3F] font-heading text-2xl;
   }
 
   & figure {
-    @apply bg-primary/20 rounded-full max-w-[300px] max-h-[300px];
+    @apply bg-primary/20 rounded-full w-[250px] h-[250px];
   }
 
   .buttonSection {
