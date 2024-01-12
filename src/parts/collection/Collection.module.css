@@ -7,7 +7,6 @@
 
   .content {
     @apply flex flex-col gap-3;
-    @apply text-medium;
 
     & label {
       @apply font-label;

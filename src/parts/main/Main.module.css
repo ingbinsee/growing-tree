@@ -24,7 +24,7 @@
     }
 
     .text {
-      @apply text-contentTertiary text-medium;
+      @apply text-contentTertiary;
     }
   }
 }

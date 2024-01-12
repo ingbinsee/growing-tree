@@ -1,5 +1,5 @@
 .button {
-  @apply font-label text-medium text-contentSecondary;
+  @apply font-label text-contentSecondary;
   @apply py-2 rounded-xl;
 }
 
@@ -9,7 +9,7 @@
 }
 
 .dateList {
-  @apply text-medium bg-primary/20;
+  @apply bg-primary/20;
   @apply px-3 py-2 mb-3 rounded-[4px];
   @apply flex gap-3;
 
@@ -25,7 +25,6 @@
 
 .labelInput {
   @apply flex flex-col gap-3;
-  @apply text-medium;
 
   & label {
     @apply font-label;

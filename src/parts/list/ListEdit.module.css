@@ -7,7 +7,6 @@
     & textarea {
       @apply border border-borderDefault rounded-[4px];
       @apply w-full p-3;
-      @apply text-medium;
     }
   }
 
