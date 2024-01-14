@@ -14,6 +14,7 @@ function ButtonSection({id, password, isChecked}) {
         toast.error('개인정보 수집 및 이용에 동의해 주세요.');
       } else {
         await createUserWithEmailAndPassword(auth, id, password);
+        localStorage.setItem('id', id);
         navigate('/treename');
       }
     } catch (error) {
