@@ -7,7 +7,7 @@ export const theme = {
       secondary: '#516F50',
       positive: '#60789C',
       negative: '#B2595D',
-      wraning: '#FFD600',
+      warning: '#FFD600',
       focus: '#1560BD',
       contentPrimary: '#000000',
       contentSecondary: '#FFFFFF',
