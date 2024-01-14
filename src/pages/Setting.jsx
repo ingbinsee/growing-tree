@@ -2,15 +2,21 @@ import styles from '@/parts/setting/Setting.module.css';
 import CahngePasswordIcon from '@/parts/setting/icons/CahngePasswordIcon';
 import ChangeTreeNameIcon from '@/parts/setting/icons/ChangeTreeNameIcon';
 import SignOutIcon from '@/parts/setting/icons/SignOutIcon';
-import Modal from '@/parts/signOut/Modal';
+import SignOutModal from '@/parts/signOut/SignOutModal';
+import WithdrawalModal from '@/parts/withdrawal/WithdrawalModal';
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
 
 function Setting() {
   const [signOutModal, setSignOutModal] = useState(false);
+  const [withdrawalModal, setWithdrawalModal] = useState(false);
 
   const handleSignOutOpen = () => {
     setSignOutModal(true);
+  };
+
+  const handleWithdrawalOpen = () => {
+    setWithdrawalModal(true);
   };
 
   return (
@@ -37,15 +43,23 @@ function Setting() {
             <CahngePasswordIcon />
             <span>로그아웃</span>
           </button>
-          <Modal
+          <SignOutModal
             signOutModal={signOutModal}
             setSignOutModal={setSignOutModal}
           />
         </li>
       </ul>
-      <Link to="/withdrawal" className={styles.link}>
+      <button
+        type="button"
+        className={styles.link}
+        onClick={handleWithdrawalOpen}
+      >
         <span>회원탈퇴</span>
-      </Link>
+      </button>
+      <WithdrawalModal
+        withdrawalModal={withdrawalModal}
+        setWithdrawalModal={setWithdrawalModal}
+      />
     </div>
   );
 }

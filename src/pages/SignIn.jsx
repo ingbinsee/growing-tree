@@ -3,13 +3,8 @@ import SectionTitle from '@/components/SectionTitle';
 import {auth} from '@/firebase';
 import InfoSection from '@/parts/signIn/InfoSection';
 import styles from '@/parts/signIn/SignIn.module.css';
-import {
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signOut,
-} from 'firebase/auth';
-import {useEffect} from 'react';
-import {useState} from 'react';
+import {onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
+import {useEffect, useState} from 'react';
 import {Helmet} from 'react-helmet-async';
 import toast from 'react-hot-toast';
 import {useNavigate} from 'react-router-dom';
@@ -54,6 +49,7 @@ const SignIn = () => {
           className={styles.button}
           onClick={handleLogin}
         />
+        <div>{user?.email}</div>
       </div>
     </>
   );

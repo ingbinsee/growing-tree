@@ -6,7 +6,7 @@ import ReactModal from 'react-modal';
 import {useNavigate} from 'react-router-dom';
 import styles from './signOut.module.css';
 
-function Modal({signOutModal, setSignOutModal}) {
+function SignOutModal({signOutModal, setSignOutModal}) {
   const navigate = useNavigate();
 
   const handleSignOutClose = () => {
@@ -47,9 +47,9 @@ function Modal({signOutModal, setSignOutModal}) {
   );
 }
 
-Modal.propTypes = {
+SignOutModal.propTypes = {
   signOutModal: bool,
   setSignOutModal: func,
 };
 
-export default Modal;
+export default SignOutModal;
