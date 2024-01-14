@@ -1,0 +1,25 @@
+.modal {
+  @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
+  @apply flex flex-col gap-12;
+  @apply px-6 py-12;
+  @apply bg-black/70 rounded-[20px];
+
+  & span {
+    @apply font-heading text-xl text-center text-contentSecondary;
+    @apply block;
+  }
+
+  .buttonSection {
+    @apply flex gap-6;
+
+    .positiveButton {
+      @apply bg-positive/80 hover:bg-positive;
+      @apply flex-1;
+    }
+
+    .negativeButton {
+      @apply bg-negative/80 hover:bg-negative;
+      @apply flex-1;
+    }
+  }
+}

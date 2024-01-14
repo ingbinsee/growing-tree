@@ -1,10 +1,18 @@
+import styles from '@/parts/setting/Setting.module.css';
 import CahngePasswordIcon from '@/parts/setting/icons/CahngePasswordIcon';
 import ChangeTreeNameIcon from '@/parts/setting/icons/ChangeTreeNameIcon';
 import SignOutIcon from '@/parts/setting/icons/SignOutIcon';
+import Modal from '@/parts/signOut/Modal';
+import {useState} from 'react';
 import {Link} from 'react-router-dom';
-import styles from '@/parts/setting/Setting.module.css';
 
 function Setting() {
+  const [signOutModal, setSignOutModal] = useState(false);
+
+  const handleSignOutOpen = () => {
+    setSignOutModal(true);
+  };
+
   return (
     <div className={styles.setting}>
       <ul>
@@ -21,10 +29,18 @@ function Setting() {
           </Link>
         </li>
         <li>
-          <Link to="/signout" className={styles.listLink}>
+          <button
+            type="button"
+            className={styles.listLink}
+            onClick={handleSignOutOpen}
+          >
             <CahngePasswordIcon />
             <span>로그아웃</span>
-          </Link>
+          </button>
+          <Modal
+            signOutModal={signOutModal}
+            setSignOutModal={setSignOutModal}
+          />
         </li>
       </ul>
       <Link to="/withdrawal" className={styles.link}>

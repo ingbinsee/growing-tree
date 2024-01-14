@@ -14,7 +14,6 @@ import ListEdit from './pages/ListEdit';
 import Main from './pages/Main';
 import Setting from './pages/Setting';
 import SignIn from './pages/SignIn';
-import SignOut from './pages/SignOut';
 import SignUp from './pages/SignUp';
 import TreeName from './pages/TreeName';
 import Withdrawal from './pages/Withdrawal';
@@ -30,7 +29,6 @@ const router = createBrowserRouter(
       <Route path="/list/:id/edit" element={<ListEdit />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
-      <Route path="/signout" element={<SignOut />} />
       <Route path="/withdrawal" element={<Withdrawal />} />
       <Route path="/treename" element={<TreeName />} />
       <Route path="/setting" element={<Setting />} />
