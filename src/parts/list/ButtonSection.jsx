@@ -2,6 +2,9 @@ import Button from '@/components/Button';
 import {string} from 'prop-types';
 import {useNavigate} from 'react-router-dom';
 import styles from './ListDetail.module.css';
+import {deleteDoc, doc} from 'firebase/firestore';
+import {db} from '@/firebase';
+import toast from 'react-hot-toast';
 
 function ButtonSection({useId}) {
   const navigate = useNavigate();
@@ -18,8 +21,10 @@ function ButtonSection({useId}) {
     navigate(`/list/${useId}/edit`);
   };
 
-  const handleDelate = () => {
-    // 로직 작성 예정입니다.
+  const handleDelate = async () => {
+    await deleteDoc(doc(db, 'growth', useId));
+    toast.success('삭제되었습니다.');
+    navigate('/list');
   };
 
   return (
