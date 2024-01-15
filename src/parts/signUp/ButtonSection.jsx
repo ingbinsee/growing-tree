@@ -8,7 +8,9 @@ import styles from './SignUp.module.css';
 
 function ButtonSection({id, password, isChecked}) {
   const navigate = useNavigate();
-  const handleRegister = async () => {
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
     try {
       if (!isChecked) {
         toast.error('개인정보 수집 및 이용에 동의해 주세요.');

@@ -22,7 +22,9 @@ const SignIn = () => {
     });
   }, []);
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
     try {
       await signInWithEmailAndPassword(auth, id, password);
       localStorage.setItem('id', id);
@@ -31,7 +33,7 @@ const SignIn = () => {
         navigator('/main');
       }, 1000);
     } catch (error) {
-      toast.error('로그인에 실패하였습니다.');
+      toast.error('아이디와 비밀번호를 확인해 주세요.');
     }
   };
 
@@ -40,7 +42,7 @@ const SignIn = () => {
       <Helmet>
         <title>GROWING | 로그인</title>
       </Helmet>
-      <div className={styles.signIn}>
+      <form className={styles.signIn}>
         <SectionTitle text="로그인" />
         <InfoSection setId={setId} setPassword={setPassword} />
         <Button
@@ -50,7 +52,7 @@ const SignIn = () => {
           onClick={handleLogin}
         />
         <div>{user?.email}</div>
-      </div>
+      </form>
     </>
   );
 };

@@ -17,7 +17,7 @@ const SignUp = () => {
       <Helmet>
         <title>GROWING | 회원가입</title>
       </Helmet>
-      <div className={styles.signUp}>
+      <form className={styles.signUp}>
         <SectionTitle text="회원가입" />
         <InfoSection
           setId={setId}
@@ -28,7 +28,7 @@ const SignUp = () => {
         />
         <AgreementSection isChecked={isChecked} setIsChecked={setIsChecked} />
         <ButtonSection id={id} password={password} isChecked={isChecked} />
-      </div>
+      </form>
     </>
   );
 };
