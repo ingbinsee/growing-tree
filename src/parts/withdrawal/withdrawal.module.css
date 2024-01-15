@@ -32,3 +32,20 @@
     }
   }
 }
+
+.withdrawal {
+  @apply flex flex-col gap-12;
+
+  & section {
+    @apply flex flex-col gap-6;
+
+    & div {
+      @apply flex gap-2 items-center justify-end;
+    }
+  }
+
+  .negativeButton {
+    @apply bg-negative/80 hover:bg-negative;
+    @apply w-full;
+  }
+}
