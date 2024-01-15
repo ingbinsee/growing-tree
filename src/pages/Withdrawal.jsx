@@ -21,6 +21,7 @@ function Withdrawal() {
   const navigate = useNavigate();
   const userId = localStorage.getItem('id');
   const [info, setInfo] = useState();
+  const [reasonInfo, setReasonInfo] = useState();
   const [idInfo, setIdInfo] = useState();
   const [treeNameInfo, setTreeNameInfo] = useState();
   const [isChecked, setIsChecked] = useState(false);
@@ -50,18 +51,22 @@ function Withdrawal() {
   const handleWithdrawal = async (e) => {
     e.preventDefault();
 
-    if (!isChecked) {
-      toast.error('데이터 삭제에 동의해 주세요.');
+    if (!reasonInfo) {
+      toast.error('탈퇴 사유를 작성해 주세요.');
     } else {
-      if (info[0].email === idInfo && info[0].name === treeNameInfo) {
-        const user = auth.currentUser;
-        await deleteUser(user);
-        await deleteDoc(doc(db, 'tree', info[0].id));
-        localStorage.removeItem('id');
-        toast.success('회원탈퇴되었습니다. 이용해 주셔서 감사합니다.');
-        navigate('/');
+      if (!isChecked) {
+        toast.error('데이터 삭제에 동의해 주세요.');
       } else {
-        toast.error('회원탈퇴에 실패했습니다. 다시 시도해 주세요.');
+        if (info[0].email === idInfo && info[0].name === treeNameInfo) {
+          const user = auth.currentUser;
+          await deleteUser(user);
+          await deleteDoc(doc(db, 'tree', info[0].id));
+          localStorage.removeItem('id');
+          toast.success('회원탈퇴되었습니다. 이용해 주셔서 감사합니다.');
+          navigate('/');
+        } else {
+          toast.error('회원탈퇴에 실패했습니다. 다시 시도해 주세요.');
+        }
       }
     }
   };
@@ -78,6 +83,7 @@ function Withdrawal() {
           setTreeNameInfo={setTreeNameInfo}
           isChecked={isChecked}
           setIsChecked={setIsChecked}
+          setReasonInfo={setReasonInfo}
         />
         <Button
           type="submit"

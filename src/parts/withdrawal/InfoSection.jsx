@@ -2,7 +2,13 @@ import LabelInput from '@/components/LabelInput';
 import {uid} from 'uid';
 import {func, bool} from 'prop-types';
 
-function InfoSection({setIdInfo, setTreeNameInfo, isChecked, setIsChecked}) {
+function InfoSection({
+  setIdInfo,
+  setTreeNameInfo,
+  isChecked,
+  setIsChecked,
+  setReasonInfo,
+}) {
   const checkboxId = uid();
 
   return (
@@ -12,6 +18,9 @@ function InfoSection({setIdInfo, setTreeNameInfo, isChecked, setIsChecked}) {
         type="text"
         placeholder="탈퇴 사유를 작성해 주세요."
         direction="row"
+        onChange={(e) => {
+          setReasonInfo(e.target.value);
+        }}
       />
       <LabelInput
         labelText="아이디 입력"
@@ -51,6 +60,7 @@ InfoSection.propTypes = {
   setTreeNameInfo: func,
   isChecked: bool,
   setIsChecked: func,
+  setReasonInfo: func,
 };
 
 export default InfoSection;
