@@ -31,7 +31,7 @@ function List() {
       }
     };
     fetchData();
-  }, []);
+  }, [userId]);
 
   const sortedList = list?.slice().toSorted((a, b) => b.date - a.date);
 

@@ -28,7 +28,7 @@ function ListDetail() {
       }
     };
     fetchData();
-  }, []);
+  }, [useId]);
 
   if (listDetail) {
     const {title, date, content, img} = listDetail[0];
