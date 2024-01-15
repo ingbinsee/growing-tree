@@ -8,7 +8,7 @@
       @apply flex gap-6;
 
       & img {
-        @apply w-[130px];
+        @apply w-[130px] max-h-[130px];
       }
       .content {
         @apply px-3 py-3 rounded-xl;

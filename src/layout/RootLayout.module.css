@@ -15,7 +15,7 @@
   }
 
   .footer {
-    @apply bg-primary;
+    @apply bg-secondary;
     @apply max-w-[767px] w-full;
     @apply fixed bottom-0;
 
@@ -34,6 +34,6 @@
     }
   }
   & main {
-    @apply px-6 py-16;
+    @apply px-6 pt-6 pb-24;
   }
 }
