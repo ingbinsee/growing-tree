@@ -13,7 +13,7 @@ function Main() {
   const [name, setName] = useState('');
   const [length, setLength] = useState();
   const userId = localStorage.getItem('id');
-  const nevigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchTreeName = async () => {
@@ -61,7 +61,7 @@ function Main() {
     return (
       <>
         <Helmet>
-          <title>GROWING | 나의 나무</title>
+          <title>GROWING</title>
         </Helmet>
         <div className={styles.main}>
           <SectionTitle text="나의 나무" />
@@ -75,7 +75,7 @@ function Main() {
       </>
     );
   } else {
-    nevigate('/');
+    navigate('/');
   }
 }
 

@@ -1,17 +1,21 @@
 import Button from '@/components/Button';
-import { string } from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+import {string} from 'prop-types';
+import {useNavigate} from 'react-router-dom';
 import styles from './ListDetail.module.css';
 
 function ButtonSection({useId}) {
-  const nevigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleList = () => {
-    nevigate('/list');
+    navigate('/list');
+    localStorage.removeItem('listImg');
+    localStorage.removeItem('listDate');
+    localStorage.removeItem('listContent');
+    localStorage.removeItem('listTitle');
   };
 
   const handleUpdate = () => {
-    nevigate(`/list/${useId}/edit`);
+    navigate(`/list/${useId}/edit`);
   };
 
   const handleDelate = () => {
