@@ -1,19 +1,19 @@
 .modal {
   @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
-  @apply flex flex-col gap-12;
-  @apply px-6 py-12;
+  @apply flex flex-col gap-6;
+  @apply w-[300px] p-6;
   @apply bg-black/70 rounded-[20px];
 
   & p {
-    @apply flex flex-col gap-3;
+    @apply flex flex-col gap-3 items-center;
 
     & span {
-      @apply font-heading text-xl text-center text-contentSecondary;
+      @apply font-heading text-large text-center text-contentSecondary;
       @apply block;
     }
 
     .warning {
-      @apply text-warning text-large;
+      @apply text-warning text-medium;
       @apply flex gap-3 items-center;
     }
   }

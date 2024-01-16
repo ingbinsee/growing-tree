@@ -26,7 +26,8 @@ function WithdrawalModal({withdrawalModal, setWithdrawalModal}) {
         <span>회원탈퇴하시겠습니까?</span>
         <span className={styles.warning}>
           <WarningIcon />
-          모든 데이터가 삭제되며, 복구가 불가합니다.
+          모든 데이터가 삭제되며, <br />
+          복구가 불가합니다.
         </span>
       </p>
       <section className={styles.buttonSection}>
