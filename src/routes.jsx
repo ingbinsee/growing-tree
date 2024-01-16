@@ -4,7 +4,6 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import RootLayout from './layout/RootLayout';
-import ChangePassword from './pages/ChangePassword';
 import ChangeTreeName from './pages/ChangeTreeName';
 import Collection from './pages/Collection';
 import Home from './pages/Home';
@@ -17,11 +16,12 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import TreeName from './pages/TreeName';
 import Withdrawal from './pages/Withdrawal';
+import ChangePassword from './pages/ChangePassword';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route index element={<Home />} />      
+      <Route index element={<Home />} />
       <Route path="/main" element={<Main />} />
       <Route path="/collection" element={<Collection />} />
       <Route path="/list" element={<List />} />
