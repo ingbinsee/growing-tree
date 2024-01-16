@@ -33,6 +33,10 @@ function ButtonSection({changePassword, changePasswordRe, userId}) {
     }
   };
 
+  const handleSetting = () => {
+    navigate('/setting');
+  };
+
   return (
     <section className={styles.buttonSection}>
       <Button
@@ -45,7 +49,7 @@ function ButtonSection({changePassword, changePasswordRe, userId}) {
         type="button"
         text="취소"
         className={styles.negativeButton}
-        onClick={() => {}}
+        onClick={handleSetting}
       />
     </section>
   );
