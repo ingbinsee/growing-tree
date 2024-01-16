@@ -1,0 +1,25 @@
+.changeTreeName {
+  @apply flex flex-col gap-12;
+
+  .infoSection {
+    @apply flex flex-col gap-6;
+
+    & span {
+      @apply text-red-500 text-small pt-1 absolute;
+    }
+  }
+
+  .buttonSection {
+    @apply flex gap-6;
+
+    .positiveButton {
+      @apply bg-positive/80 hover:bg-positive;
+      @apply flex-1;
+    }
+
+    .negativeButton {
+      @apply bg-negative/80 hover:bg-negative;
+      @apply flex-1;
+    }
+  }
+}
