@@ -8,6 +8,8 @@
     @apply bg-primary;
     @apply py-2;
     @apply flex justify-center;
+    @apply max-w-[767px] w-full;
+    @apply fixed top-0;
 
     & h1 {
       @apply w-12 h-12;
@@ -15,7 +17,7 @@
   }
 
   .footer {
-    @apply bg-secondary;
+    @apply bg-primary;
     @apply max-w-[767px] w-full;
     @apply fixed bottom-0;
 
@@ -34,6 +36,6 @@
     }
   }
   & main {
-    @apply px-6 pt-6 pb-24;
+    @apply px-6 py-24;
   }
 }
