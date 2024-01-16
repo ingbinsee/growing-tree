@@ -16,7 +16,7 @@ function SignOutModal({signOutModal, setSignOutModal}) {
   const handleSignOut = async () => {
     await signOut(auth);
     setSignOutModal(false);
-    localStorage.removeItem('id');
+    localStorage.clear();
     navigate('/');
   };
 
@@ -26,9 +26,7 @@ function SignOutModal({signOutModal, setSignOutModal}) {
       onRequestClose={handleSignOutClose}
       className={styles.modal}
     >
-      <span>
-        로그아웃하시겠습니까?
-      </span>
+      <span>로그아웃하시겠습니까?</span>
       <section className={styles.buttonSection}>
         <Button
           type="button"
