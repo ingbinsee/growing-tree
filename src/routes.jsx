@@ -1,22 +1,24 @@
+import { lazy } from 'react';
 import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import RootLayout from './layout/RootLayout';
-import ChangeTreeName from './pages/ChangeTreeName';
-import Collection from './pages/Collection';
-import Home from './pages/Home';
-import List from './pages/List';
-import ListDetail from './pages/ListDetail';
-import ListEdit from './pages/ListEdit';
-import Main from './pages/Main';
-import Setting from './pages/Setting';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
-import TreeName from './pages/TreeName';
-import Withdrawal from './pages/Withdrawal';
-import ChangePassword from './pages/ChangePassword';
+
+const RootLayout = lazy(() => import('./layout/RootLayout'));
+const ChangeTreeName = lazy(() => import('./pages/ChangeTreeName'));
+const Collection = lazy(() => import('./pages/Collection'));
+const Home = lazy(() => import('./pages/Home'));
+const List = lazy(() => import('./pages/List'));
+const ListDetail = lazy(() => import('./pages/ListDetail'));
+const ListEdit = lazy(() => import('./pages/ListEdit'));
+const Main = lazy(() => import('./pages/Main'));
+const Setting = lazy(() => import('./pages/Setting'));
+const SignIn = lazy(() => import('./pages/SignIn'));
+const SignUp = lazy(() => import('./pages/SignUp'));
+const TreeName = lazy(() => import('./pages/TreeName'));
+const Withdrawal = lazy(() => import('./pages/Withdrawal'));
+const ChangePassword = lazy(() => import('./pages/ChangePassword'));
 
 const router = createBrowserRouter(
   createRoutesFromElements(
