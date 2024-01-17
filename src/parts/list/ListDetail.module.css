@@ -5,10 +5,11 @@
     @apply flex flex-col gap-2;
 
     & figure {
-      @apply flex gap-6;
+      @apply flex flex-col gap-6;
 
       & img {
-        @apply w-[130px] max-h-[130px];
+        @apply w-[260px] max-h-[260px];
+        @apply m-auto;
       }
       .content {
         @apply px-3 py-3 rounded-xl;
@@ -16,7 +17,6 @@
         @apply bg-positive/20;
       }
     }
-   
   }
 
   & section {

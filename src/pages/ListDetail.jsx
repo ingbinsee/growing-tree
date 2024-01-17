@@ -49,8 +49,8 @@ function ListDetail() {
               date={date.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')}
             />
             <figure>
-            <img src={img} alt={title} />
-            <p className={styles.content}>{content}</p>
+              {img === '' || <img src={img} alt={title} />}
+              <p className={styles.content}>{content}</p>
             </figure>
           </div>
           <ButtonSection useId={useId} />
@@ -59,6 +59,5 @@ function ListDetail() {
     );
   }
 }
-
 
 export default ListDetail;
