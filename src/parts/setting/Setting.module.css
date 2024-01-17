@@ -1,5 +1,7 @@
 .setting {
-  @apply  relative;
+  @apply relative;
+  @apply flex flex-col gap-12;
+  @apply pb-24;
 
   & ul {
     @apply flex flex-col gap-6;
@@ -13,7 +15,7 @@
 
   .link {
     @apply text-medium text-contentTertiary hover:text-contentPrimary;
-    @apply absolute right-0;
+    @apply absolute right-0 bottom-0;
     @apply mt-10 p-2;
   }
 }

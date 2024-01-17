@@ -1,10 +1,11 @@
-import placeholder from '@/assets/placeholder.jpeg';
+import placeholder from '@/assets/collection_placeholder.jpeg';
 import LabelInput from '@/components/LabelInput';
 import {storage} from '@/firebase';
 import {getDownloadURL, ref, uploadBytes} from 'firebase/storage';
-import {func, string} from 'prop-types';
+import {func, string, array} from 'prop-types';
 import {uid} from 'uid';
 import styles from './Collection.module.css';
+import treeIcon from '@/assets/collection_treeIcon.png';
 
 function InfoSection({
   setTitleData,
@@ -12,6 +13,7 @@ function InfoSection({
   setContentData,
   setImgData,
   imgData,
+  nameData,
 }) {
   const contentId = uid();
   const dt = new Date();
@@ -35,6 +37,10 @@ function InfoSection({
 
   return (
     <section className={styles.infoSection}>
+      <div className={styles.infoTree}>
+        <img src={treeIcon} alt="나무 아이콘" />
+        <span>{nameData[0].name}</span>
+      </div>
       <LabelInput
         labelText="제목"
         type="text"
@@ -64,7 +70,9 @@ function InfoSection({
         </div>
       </div>
       <div className={styles.content}>
-        <label htmlFor={contentId}><h3>내용</h3></label>
+        <label htmlFor={contentId}>
+          <h3>내용</h3>
+        </label>
         <textarea
           name="content"
           id={contentId}
@@ -85,6 +93,7 @@ InfoSection.propTypes = {
   setContentData: func,
   setImgData: func,
   imgData: string,
+  nameData: array,
 };
 
 export default InfoSection;
